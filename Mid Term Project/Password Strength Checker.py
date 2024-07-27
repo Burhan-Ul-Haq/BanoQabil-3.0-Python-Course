@@ -2,6 +2,9 @@
 # Roll No.: 8
 # Email: burhanrgrg8@gmail.com
 
+# Name: Hanzala Rashid
+# Roll No.: 15
+# Email: hanzalarashid7@gmail.com
                                                                                                         # Password Strength Checker
 
 """This is a Password Strength Checker, 
