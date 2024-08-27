@@ -77,14 +77,13 @@ def log_data(exercise_name):
             # If Value Error Occurs
             except ValueError:
                 print("\nError: Please enter a valid integer for Weight and Sets.")
-                return
 
         # Current Date and Time
         current_time = datetime.now().strftime("%d-%m-%Y %H:%M")
 
             # Writing Log Data of Particular Exercise
         with open(log_file, 'a') as f:
-            f.write(f"Date: {current_time}\nWeight: {weight} KGs\nSets: {sets}\n\n")
+            f.write(f"\nDate: {current_time}\nWeight: {weight} KGs\nSets: {sets}\n")
 
         # Comparison of old High Score Weight and Sets with New
         new_high_score_weight = weight > High_Score_Weight
@@ -113,7 +112,7 @@ def log_data(exercise_name):
 
     # If any Error Other than Value Error Occurs
     except Exception as e:
-        print(f"\nAn Error occurred while logging data: {e}")
+        print(f"\nAn Error occurred while logging data: {e}\n")
 
 # Function for Checking Log Data
 def check_log_data(exercise_name):
@@ -132,11 +131,11 @@ def check_log_data(exercise_name):
 
         # If Log Data doesn't Exists
         else:
-            print(f"\nNo Log Recorded for {exercise_name} yet.")
+            print(f"\nNo Log Recorded for {exercise_name} yet.\n")
 
     # If any Error Occurs
     except Exception as e:
-        print(f"\nAn Error occurred while setting goals: {e}")
+        print(f"\nAn Error occurred while setting goals: {e}\n")
 
 def set_goals(exercise_name):
 
@@ -173,15 +172,15 @@ def set_goals(exercise_name):
                     if len(day) == 2 and len(month) == 2 and len(year) == 4:
                         break
                     else:
-                        print("\nError: The date must be in the format DD-MM-YYYY. Please try again.")
+                        print("\nError: The date must be in the format DD-MM-YYYY. Please try again.\n")
         
             # If Value Error Occurs
                 except ValueError:
-                    print("\nError: The date must be in the format DD-MM-YYYY. Please try again.")
+                    print("\nError: The date must be in the format DD-MM-YYYY. Please try again.\n")
     
             # If the input contains characters other than digits or hyphens
             else:
-                print("\nError: The date must be in the format DD-MM-YYYY. Please try again.")
+                print("\nError: The date must be in the format DD-MM-YYYY. Please try again.\n")
         
         # Assign Value to Other Variable
         Goal_Time= raw_date
@@ -219,7 +218,7 @@ def check_goals(exercise_name):
         if os.path.exists(goal_file):
             with open(goal_file, 'r') as b:
                 goal_data= b.read()
-            print(f"\nGoal for {exercise_name}:\n{goal_data}\n")
+            print(f"\nGoal for {exercise_name}:\n{goal_data}")
     
         # If Goal Doessn't Exists
         else:
@@ -227,7 +226,7 @@ def check_goals(exercise_name):
 
     # If any Error Occurs
     except Exception as e:
-        print(f"\nAn Error occured while checking Goals: {e}")
+        print(f"\nAn Error occured while checking Goals: {e}\n")
 
 # Function for Checking High Score:
 def check_high_score(exercise_name):
@@ -246,7 +245,7 @@ def check_high_score(exercise_name):
         
         # If High Score Doesn't Exists
         else:
-            print(f"\nNo high score recorded for {exercise_name} yet.")
+            print(f"\nNo high score recorded for {exercise_name} yet.\n")
     
     # If any Error Occurs
     except Exception as e:
@@ -275,7 +274,7 @@ def exercise_menu():
                 return exercise_name
 
             # Listing the Exercises
-            print("Existing Exercises:")
+            print("\nExisting Exercises:")
             for i, exercise_name in enumerate(exercises, 1):
                 print(f"{i}. {exercise_name}")
 
@@ -301,7 +300,7 @@ def exercise_menu():
         
                 # If User Inputs a Value Longer than what is available
                 else:
-                    print("\nInvalid Choice.\n")
+                    print("\nInvalid Choice.")
 
             # If Value Error Occurs
             except ValueError:
@@ -314,88 +313,108 @@ def exercise_menu():
 # Function for List of Action that can be Performed
 def perform_action(exercise_name):
 
+    # Looping If there is an Error
+    while True:
+
+        try:
+        
+            # Printing Actions that can be performed
+            print(f"\nWhat would you like to do with {exercise_name}?")
+            print("1. Log Data")
+            print("2. Check Log Data")
+            print("3. Check High Score")
+            print("4. Set Goal")
+            print("5. Check Goal")
+
+            # Input of Action that User want to perform
+            action_choice= int(input("\nEnter Number what you want to do: "))
+
+            # Checking Input and running Functions according to it
+            if action_choice == 1:
+                log_data(exercise_name)
+            elif action_choice == 2:
+                check_log_data(exercise_name)
+            elif action_choice == 3:
+                check_high_score(exercise_name)
+            elif action_choice == 4:
+                set_goals(exercise_name)
+            elif action_choice == 5:
+                check_goals(exercise_name)
+            else:
+                print("\nInvalid choice\n")
+                continue
+
+            # Looping If there is an Error
+            while True:
+
+                print("Do you want to Exit or Continue?")
+                print("Enter 1 to Continue")
+                print("Enter 2 to Exit\n")
+
+                try:
+                    cont = int(input("Select a Number: "))
+                    if cont == 2:
+                        print("\nExiting the program. Goodbye!")
+                        return
+                    elif cont == 1:
+                        return
+                    else:
+                        print("\nError: Please Enter 1 to Continue or 2 to Exit.\n")
+
+                # If Value Error Occurs
+                except ValueError:
+                    print("\nError: Please Enter a Valid Number.\n")
+    
+        # If Any Error Other than Value Error Occurs
+        except Exception as e:
+            print(f"\nAn Error occurred while performing the action: {e}")
+
+# Function for Main Menu
+def main_menu():
+
     try:
+        print("\nRunning Program...")
 
-        # Printing Actions that can be performed
-        print(f"\nWhat would you like to do with {exercise_name}?")
-        print("1. Log Data")
-        print("2. Check Log Data")
-        print("3. Check High Score")
-        print("4. Set Goal")
-        print("5. Check Goal")
-
-        # Input of Action that User want to perform
-        action_choice= int(input("\nEnter Number what you want to do: "))
-
-        # Looping If there is a Error
+        # Looping if any Errors Occurs
         while True:
+
             try:
-                # Checking Input and running Functions according to it
-                if action_choice == 1:
-                    log_data(exercise_name)
-                elif action_choice == 2:
-                    check_log_data(exercise_name)
-                elif action_choice == 3:
-                    check_high_score(exercise_name)
-                elif action_choice == 4:
-                    set_goals(exercise_name)
-                elif action_choice == 5:
-                    check_goals(exercise_name)
+                # Printing actions that can be performed
+                print("\nWhat would you like to do?")
+                print("1. Workout Tracker")
+                print("2. Prioritize Exercise")
+                print("3. Fitness Challenge")
+
+                # Input of Action that User wants to perform
+                main_choice = int(input("\nEnter the number of what you want to do: "))
+
+                # Running and calling functions based on user choice
+                if main_choice == 1:
+                    exercise_name = exercise_menu()
+                    if exercise_name:
+                        perform_action(exercise_name)
+                elif main_choice == 2:
+                    Prioritize(exercise_menu())
+                elif main_choice == 3:
+                    Fitness(exercise_menu())
                 else:
-                    print("\nInvalid choice")
-                break
+                    print("\nInvalid Choice")
+                    continue
 
             # If Value Error Occurs
             except ValueError:
-                print("\nError: Please enter a valid number.")
-    
-    # If Any Error Other than Value Error Occurs
+                print("\nError: Please Enter a Valid Number")
+                continue
+
+    # If any Error Other than Value Error Occurs
     except Exception as e:
         print(f"\nAn Error occurred while performing the action: {e}")
 
 # Looping Program
-while True:
-
-    # Running and Calling Functions
-    print("\nRunning Program...\n")
-    exercise_name= exercise_menu()
-    if exercise_name:
-        perform_action(exercise_name)
-
-    # Prompt to continue or exit
-    print("Do you want to Exit or Continue?")
-    print("Enter 1 to Continue")
-    print("Enter 2 to Exit\n")
-
-    try:
-        # Taking Input Whether to Continue Program Or Exit
-        cont = int(input("Select a Number: "))
-
-        # Check for continuation or exit
-        if cont == 2:
-            print("\nExiting the program. Goodbye!")
-            break
-
-        elif cont != 1:
-            # If the user inputs a number other than 1 or 2, it's invalid
-            print("\nError: Please Enter 1 to Continue or 2 to Exit.")
-
-    # If Value Error Occurs
-    except ValueError:
-        print("\nError: Please Enter a Valid Number.\n")
+first_run = True
+while first_run or main_menu():
+    first_run = False
 
 """
 Made By: Burhan Ul Haq
-"""
-"""
-func invoke()
-exercise name= Workout(exerrcise_menu)
-    if exercise_name:
-        perform_action(exercise_name)
-priority exercise= Priotize(exercise_menu)
-bench press select
-    priority exercise= bench press
-print(priority exercise)
-    bench press print
- 
 """
