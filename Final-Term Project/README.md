@@ -1,4 +1,4 @@
-<p align="center" style="font-size:24px;">
+<p align="center" style="font-size:124px;">
   This is centered and larger text.
 </p>
 
