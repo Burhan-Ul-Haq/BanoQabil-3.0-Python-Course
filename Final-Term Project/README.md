@@ -1,3 +1,9 @@
+<p align="center" style="font-size:24px;">
+  This is centered and larger text.
+</p>
+
+
+
 <p align="center" style="font-size:1000px;">
 	Fitness Flow
 </p>
