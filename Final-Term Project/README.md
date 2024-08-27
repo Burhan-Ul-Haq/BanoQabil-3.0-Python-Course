@@ -1,4 +1,4 @@
-<p align="center" style="font-size:50px;">
+<p align="center" style="font-size:1000px;">
 Fitness Flow
 </p>
 
