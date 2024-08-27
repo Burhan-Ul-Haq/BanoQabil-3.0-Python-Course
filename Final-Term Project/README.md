@@ -1,8 +1,7 @@
-<p align="center">
-<p style="font-size:24px;">
+<p align="center" style="font-size:24px;">
 Fitness Flow
 </p>
-</p>
+
 
 
 
