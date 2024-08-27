@@ -1,14 +1,4 @@
-<p align="center" style="font-size:124px;">
-  This is centered and larger text.
-</p>
-
-
-
-<p align="center" style="font-size:1000px;">
-	Fitness Flow
-</p>
-
-
+# Fitness Flow
 
 
 Fitness Flow is a Workout Tracker and is made for Fitness Geeks who want to Prioritize their Fitness, it can help people to keep track of their everyday Fitness data. So, our program comes in handy for those who need it.
