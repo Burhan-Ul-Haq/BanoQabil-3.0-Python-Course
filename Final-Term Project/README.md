@@ -7,6 +7,6 @@ The features of Fitness Flow are Logging Data, Setting Goals, Prioritize Exercis
 
 + Logging Data: Helps Users to keep track of their Particular Exercise data of How Much they have completed and Users can check this data whenever they want.
 + Setting Goals: Users can set goals for their Exercises with this feature.
-+ Dieting Planning: This feature gives User chance to set their Diet Plan for Particular Exercise and Never Miss their Calorie Count.
++ Dieting Planning: This feature gives Users a Chance to set their Diet Plan for a Particular Exercise and Never Miss their Calorie Count.
 + Prioritize Exercises: This feature helps users prioritize their exercises to improve their focus on particular Exercises.
 + Fitness Challenge: The Program Generates a Challenge that helps Users train more.
