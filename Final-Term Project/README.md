@@ -1,5 +1,7 @@
 <p align="center">
-# Fitness Flow
+	<p style="font-size:24px;">
+#Fitness Flow
+	</p>
 </p>
 
 
