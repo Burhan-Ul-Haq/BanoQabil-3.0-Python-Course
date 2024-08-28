@@ -1,7 +1,7 @@
 # Fitness Flow
 
 
-Fitness Flow is a Workout Tracker and is made for Fitness Geeks who want to Prioritize their Fitness, it can help people to keep track of their everyday Fitness data. So, our program comes in handy for those who need it.
+Fitness Flow is a Workout Tracker and is made for Fitness Geeks who want to Prioritize their Fitness, it can help people to keep track of their everyday Fitness data. So, Fitness Flow comes in handy for those who need it.
 
 The features of Fitness Flow are Logging Data, Setting Goals, Prioritize Exercises, Fitness Challenge:
 
@@ -9,4 +9,4 @@ The features of Fitness Flow are Logging Data, Setting Goals, Prioritize Exercis
 + Setting Goals: Users can set goals for their Exercises with this feature.
 + Dieting Planning: This feature gives Users a Chance to set their Diet Plan for a Particular Exercise and Never Miss their Calorie Count.
 + Prioritize Exercises: This feature helps users prioritize their exercises to improve their focus on particular Exercises.
-+ Fitness Challenge: The Program Generates a Challenge that helps Users train more.
++ Fitness Challenge: The Application Generates a Challenge that helps Users train more.
